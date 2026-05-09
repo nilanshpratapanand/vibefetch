@@ -1,0 +1,229 @@
+:root {
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #e4e4e7;
+  background-color: #000000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: #000000;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #000;
+}
+
+.app-card {
+  width: min(720px, 100%);
+  border: 1px solid #1f1f22;
+  background: radial-gradient(circle at top, #121219 0%, #07070a 65%, #050507 100%);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.75);
+}
+
+.app-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.app-subtitle {
+  margin: 8px 0 0;
+  color: #a1a1aa;
+}
+
+.app-form {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.clip-row {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.clip-input {
+  font-size: 0.88rem;
+  padding: 10px 12px;
+}
+
+.app-input {
+  flex: 1;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  background: #111111;
+  color: #f4f4f5;
+  padding: 12px 14px;
+  font-size: 0.96rem;
+  outline: none;
+}
+
+.app-input::placeholder {
+  color: #71717a;
+}
+
+.app-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.app-button {
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease, opacity 0.12s ease;
+}
+
+.app-button:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.app-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.app-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.app-status {
+  margin-top: 14px;
+  border: 1px solid #24242a;
+  background: #08080b;
+  color: #d4d4d8;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: #15151b;
+  overflow: hidden;
+  border: 1px solid #272731;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6d28d9, #3b82f6);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.8), 0 0 20px rgba(109, 40, 217, 0.65);
+  transition: width 0.25s ease;
+}
+
+.stats-row {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stat-chip {
+  border: 1px solid #262631;
+  border-radius: 10px;
+  background: #0d0d13;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.stat-label {
+  color: #8d8da0;
+  font-size: 0.8rem;
+}
+
+.stat-value {
+  color: #dbeafe;
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
+.status-text {
+  margin-top: 10px;
+  color: #a1a1aa;
+}
+
+.error-log {
+  margin-top: 8px;
+  border: 1px solid #7f1d1d;
+  background: rgba(127, 29, 29, 0.2);
+  color: #fecaca;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+
+.open-downloads-button {
+  margin-top: 12px;
+  border: 1px solid #2c2c3a;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #111827, #1d4ed8);
+  color: #e2e8f0;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.open-downloads-button:hover {
+  filter: brightness(1.12);
+}
+
+@media (max-width: 640px) {
+  .app-card {
+    padding: 20px;
+  }
+
+  .app-form {
+    flex-direction: column;
+  }
+
+  .clip-row {
+    grid-template-columns: 1fr;
+  }
+
+  .app-button {
+    width: 100%;
+  }
+}
